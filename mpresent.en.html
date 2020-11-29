@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="author" content="imacat" />
+<meta name="copyright" content="&copy; 2010 imacat." />
+<meta name="keywords" content="archive, Apache, Syslog, log files" />
+<link rel="alternate" type="application/xhtml+xml" href="mpresent.zh-tw.html"
+     hreflang="zh-tw" title="&#27491;&#39636;&#20013;&#25991;" />
+<link rel="alternate" type="application/xhtml+xml" href="mpresent.zh-cn.html"
+     hreflang="zh-cn" title="&#31616;&#20307;&#20013;&#25991;" />
+<link rel="copyright" type="text/plain" href="fdl.txt" />
+<link rel="author" href="mailto:imacat&#64;mail.imacat.idv.tw" />
+<style type="text/css">
+h2, em {
+    text-transform: uppercase;
+}
+.accessguide {
+    font-size: 0.5em;
+    float: left;
+    width: 0.5em;
+}
+cite {
+    quotes: "\00AB" "\00BB";
+}
+</style>
+<title>mpresent Version 0.01</title>
+</head>
+<body>
+
+<div class="langs" title="Language Switching Area">
+    <span xml:lang="zh-tw"><a href="mpresent.zh-tw.html"
+        title="&#20999;&#25563;&#21040;&#26412;&#38913;&#30340;&#27491;&#39636;&#20013;&#25991;&#29256;&#12290;"
+        hreflang="zh-tw">&#27491;&#39636;&#20013;&#25991;</a></span> |
+    <span xml:lang="zh-cn"><a href="mpresent.zh-cn.html"
+        title="&#20999;&#25442;&#21040;&#26412;&#39029;&#30340;&#31616;&#20307;&#20013;&#25991;&#29256;&#12290;"
+        hreflang="zh-cn">&#31616;&#20307;&#20013;&#25991;</a></span> |
+    <span>English</span>
+</div>
+<hr />
+
+
+<div id="body" class="body" title="Page Content Area">
+<div class="accessguide"><a accesskey="C"
+    href="#body" title="Page Content Area">:::</a></div>
+
+<h1><samp>mpresent</samp> Version 0.01</h1>
+
+
+<h2>What&rsquo;s New?</h2>
+
+<dl>
+<dt>2010-08-15</dt>
+
+<dd>
+<p>Re-release <samp>mpresent</samp> version 0.01 with license information.</p>
+</dd>
+
+<dt>2010-08-14</dt>
+
+<dd>
+<p>SourceForge project was applied.  Raw package <samp>mpresent</samp> version 0.01 was released, with only the program file, but not any documentation or license.  Presented on the <cite>OpenOffice.org UNO Magic</cite> talk on <abbr title="Conference for Open Source Coders, Users and Promoters">COSCUP</abbr> 2010.</p>
+</dd>
+</dl>
+
+
+<h2>Description</h2>
+
+<p><dfn><samp>mpresent</samp></dfn> is the Mobile OpenOffice.org Presentation Controller.  It is a mobile web office application that turns your smart phone into a presentation controller.  The smart phone connects to the presentation host through the <abbr title="transmission control protocol">TCP</abbr>/<abbr title="internet protocol">IP</abbr> network.  Mostly this is through <abbr title="Wireless Fidelity">Wi-Fi</abbr>.</p>
+
+<p><dfn><samp>mpresent</samp></dfn> is written in <abbr title="JavaServer Pages">JSP</abbr>.</p>
+
+
+<h2>Caution</h2>
+
+<ul>
+<li><p><samp>mpresent</samp> does not include any authentication or security mechanism.  You have to protect it yourself.</p></li>
+</ul>
+
+
+<h2>System Requirement</h2>
+
+<ol>
+<li><p>Linux or Solaris/OpenSolaris.  Theorically <abbr title="microsoft">MS</abbr>-Windows should work, too, but I have not tested it yet.  Please tell me if you do.  <samp>mpresent</samp> requires Java and OpenOffice.org.  The only platforms they both run that I know are Linux, Solaris/OpenSolaris and <abbr title="microsoft">MS</abbr>-Windows.  If you successfully run it on other platforms, please let me know.</p></li>
+
+<li><p>OpenOffice.org, version 3.0 or above.  <samp>mpresent</samp> uses the <samp><a href="http://api.openoffice.org/docs/common/ref/com/sun/star/presentation/Presentation2.html">com.sun.star.presentation.Presentation2</a></samp> service, which is only available since OpenOffice.org version 3.0.  Most Linuxes come with OpenOffice.org 3 now.  If you do not have it, or if your version is too old, you can download and install it from the <a href="http://www.openoffice.org/">OpenOffice.org website</a>.</p>
+    <p>Notice that the current version of Debian (Lenny) still comes with OpenOffice.org 2.4.  If you are running this under Debian Lenny or earlier, you have to download and install OpenOffice.org from the OpenOffice.org website.</p>
+</li>
+
+<li><p>OpenOffice.org <abbr title="software development kit">SDK</abbr>, version 3.0 or above.  <samp>mpresent</samp> uses the <samp><a href="http://api.openoffice.org/docs/common/ref/com/sun/star/presentation/Presentation2.html">com.sun.star.presentation.Presentation2</a></samp> service, which is only available since OpenOffice.org <abbr title="software development kit">SDK</abbr> version 3.0.  Most Linuxes come with OpenOffice.org 3 <abbr title="software development kit">SDK</abbr> in their package repository now.</p>
+    <ul>
+    <li><p>If you are running Ubuntu Linux, you can install the <samp>openoffice.org-dev</samp> package.</p></li>
+    <li><p>If you are running Fedora Linux, you can install the <samp>openoffice.org-core</samp> and <samp>openoffice.org-ure</samp> packages.</p></li>
+    <li><p>If you are running OpenSUSE Linux, you can install the <samp>OpenOffice_org-ure</samp> package.</p></li>
+    <li><p>If you do not have it, or if your version is too old, you can download and install it from the <a href="http://download.openoffice.org/sdk/">OpenOffice.org website</a>.</p></li>
+    </ul>
+</li>
+
+<li><p><abbr title="Java standard edition development kit">JDK</abbr>, version 1.5.0 or above.  <samp>mpresent</samp> is written with generic types, which is a new feature
+since Java 1.5.  Sun released the free <a href="http://openjdk.java.net/"><acronym title="Open Java Development Kit">OpenJDK</acronym></a> since 2006.  Till now, most Linux operating systems includes <acronym title="Open Java Development Kit">OpenJDK</acronym> in their package repositories.</p>
+    <ul>
+    <li><p>If you are running Debian or Ubuntu Linux, you can install the <samp>openjdk-6-jdk</samp> package.</p></li>
+    <li><p>If you are running Fedora or OpenSUSE Linux, you can install the <samp>java-1.6.0-openjdk</samp> package.</p></li>
+    <li><p>If you do not have it, or if your version is too old, you can download and install the Sun version from the <a href="http://www.oracle.com/technetwork/java/javase/">Java website</a>.</p></li>
+    </ul>
+</li>
+
+<li><p>Apache web server, version 2 or above.  <samp>mpresent</samp> is a web application that requires a web server to run.  <abbr title="microsoft">MS</abbr>-<abbr title="Internet Information Services">IIS</abbr> web server on <abbr title="microsoft">MS</abbr>-Windows should work, but I have not tested it yet.  Please tell me if you do.</p>
+    <ul>
+    <li><p>If you are running Debian or Ubuntu Linux, you can install the <samp>apache2</samp> package.</p></li>
+    <li><p>If you are running Fedora or OpenSUSE Linux, you can install the <samp>httpd</samp> package.</p></li>
+    <li><p>If you do not have it, or if your version is too old, you can download and install it from the <a href="http://httpd.apache.org/">Apache website</a>.</p></li>
+    </ul>
+</li>
+
+<li><p>Apache Tomcat, version 5.5 or above.  <samp>mpresent</samp> is a <abbr title="Java Server Page">JSP</abbr> application that requires a servlet container to run.</p>
+    <ul>
+    <li><p>If you are running Debian Linux, you can install the <samp>tomcat5.5</samp> package.</p></li>
+    <li><p>If you are running Ubuntu Linux, you can install the <samp>tomcat6</samp> package.</p></li>
+    <li><p>If you are running Fedora or openSUSE Linux, you can install the <samp>tomcat6</samp> package.</p></li>
+    <li><p>If you do not have it, or if your version is too old, you can download and install it from the <a href="http://tomcat.apache.org/">Apache Tomcat website</a>.</p></li>
+    </ul>
+</li>
+
+<li><p></p></li>
+
+</ol>
+
+
+<h2>Download</h2>
+
+<p><samp>arclog</samp>&rsquo;s official websites is at&hellip;</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/"><samp>arclog</samp> web site at SourceForge</a></p></li>
+
+<li><p><a href="https://sourceforge.net/projects/arclog/"><samp>arclog</samp> project page at SourceForge</a></p></li>
+
+<li><p><a href="http://search.cpan.org/~imacat/arclog/"><samp>arclog</samp> project page at <abbr title="Comprehensive Perl Archive Network">CPAN</abbr></a></p></li>
+
+<li><p><a href="http://www.imacat.idv.tw/tech/arclog.html"><samp>arclog</samp> page at Tavern IMACAT&rsquo;s</a></p></li>
+</ul>
+
+<p>You can always download the newest version of <samp>arclog</samp> from&hellip;</p>
+
+<ul>
+<li><p><a href="https://sourceforge.net/project/showfiles.php?group_id=62499"><samp>arclog</samp> download page at SourceForge</a></p></li>
+
+<li><p><a href="http://search.cpan.org/~imacat/arclog/"><samp>arclog</samp>&rsquo;s project page at <abbr title="Comprehensive Perl Archive Network">CPAN</abbr></a></p></li>
+
+<li><p><a href="ftp://ftp.imacat.idv.tw/pub/arclog/">Tavern IMACAT&rsquo;s <abbr title="File Transfer Protocol">FTP</abbr> directory</a></p></li>
+</ul>
+
+<p>imacat&rsquo;s <abbr title="Pretty Good Privacy">PGP</abbr> public key is at&hellip;</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/pgpkey.asc">imacat&rsquo;s <abbr title="Pretty Good Privacy">PGP</abbr> key at <samp>arclog</samp> SourceForge web site</a></p></li>
+
+<li><p><a href="http://www.imacat.idv.tw/me/pgpkey.asc">imacat&rsquo;s <abbr title="Pretty Good Privacy">PGP</abbr> key at Tavern IMACAT&rsquo;s</a></p></li>
+</ul>
+
+
+<h2>Install</h2>
+
+<p>If you are upgrading from <samp>arclog.pl</samp> 2.1.1dev4 or earlier, please read <samp>UPGRADE</samp> for some upgrade instruction.</p>
+
+<h3>Install with <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/"><samp>ExtUtils::MakeMaker</samp></a></h3>
+
+<p><samp>arclog</samp> uses standard <acronym title="Practical Extraction and Reporting Language">Perl</acronym> installation with <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/"><samp>ExtUtils::MakeMaker</samp></a>.  Follow these steps:</p>
+
+<blockquote><pre>
+% perl Makefile.PL
+% make
+% make test
+% make install
+</pre></blockquote>
+
+<p>When running <q><samp>make install</samp></q>, make sure you have the priviledge to write to the installation location.  This usually requires the <samp>root</samp> priviledge.</p>
+
+<p>If you are using ActivePerl under <abbr title="Microsoft">MS</abbr>-Windows, you should use <samp>nmake</samp> instead of <samp>make</samp>.  <a href="ftp://ftp.microsoft.com/Softlib/MSLFILES/nmake15.exe" type="application/x-dosexec"><samp>nmake</samp> can be obtained from the Microsoft <abbr title="File Transfer Protocol">FTP</abbr> site.</a></p>
+
+<p>If you want to install into another location, you can set the <samp>PREFIX</samp>.  For example, to install into your home when you are not <samp>root</samp>:</p>
+
+<blockquote><pre>
+% perl Makefile.PL PREFIX=/home/jessica
+</pre></blockquote>
+
+<p>Refer to the docuemntation of <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/"><samp>ExtUtils::MakeMaker</samp></a> for more installation options (by running <q><samp>perldoc ExtUtils::MakeMaker</samp></q>).</p>
+
+
+<h3>Install with <a href="http://search.cpan.org/dist/Module-Build/"><samp>Module::Build</samp></a></h3>
+
+<p>You can install with <a href="http://search.cpan.org/dist/Module-Build/"><samp>Module::Build</samp></a> instead, if you prefer.  Follow these steps:</p>
+
+<blockquote><pre>
+% perl Build.PL
+% ./Build
+% ./Build test
+% ./Build install
+</pre></blockquote>
+
+<p>When running <q><samp>./Build install</samp></q>, make sure you have the priviledge to write to the installation location.  This usually requires the <samp>root</samp> priviledge.</p>
+
+<p>If you want to install into another location, you can set the <samp>--prefix</samp>.  For example, to install into your home when you are not <samp>root</samp>:</p>
+
+<blockquote><pre>
+% perl Build.PL --prefix=/home/jessica
+</pre></blockquote>
+
+<p>Refer to the docuemntation of <a href="http://search.cpan.org/dist/Module-Build/"><samp>Module::Build</samp></a> for more installation options (by running <q><samp>perldoc Module::Build</samp></q>).</p>
+
+
+<h2>Options</h2>
+
+<pre>
+./arclog [options] logfile&hellip; [output]
+./arclog [-h|-v]
+</pre>
+
+
+<dl>
+<dt><var>logfile</var></dt>
+
+<dd>
+<p>The log file to be archived.  Specify <q><samp>-</samp></q> to read from <samp>STDIN</samp>.  Multiple log files are supported.  <samp>gzip</samp> or <samp>bzip2</samp> compressed files are supported, too.</p>
+</dd>
+
+
+<dt><var>output</var></dt>
+
+<dd>
+<p>The prefix of the output files.  The output files will be named as <samp>output.<var>yyyymm</var></samp>, <abbr title="id est">i.e.</abbr>, <samp>output.200101</samp>, <samp>output.200102</samp>.  If not specified, the default is the same as the log file.  You must specify this if you want to read from <samp>STDIN</samp>.  You cannot specify <q><samp>-</samp></q> (<samp>STDIN</samp>), since this is only a name prefix, not the output file.</p>
+</dd>
+
+
+<dt>-c, --compress <var>method</var></dt>
+
+<dd>
+<p>Specify the compression method for the archived files.  Log files usually have large number of simular lines.  Compress them saves you lots of disk spaces.  (And this is why we want to <em>archive</em> them.)  Currently the following compression methods are supported:</p>
+
+
+<dl>
+<dt>g, gzip</dt>
+
+<dd>
+<p>Compress with <samp>gzip</samp>.  This is the default.  <samp>arclog</samp> can use <a href="http://search.cpan.org/dist/Compress-Zlib/"><samp>Compress::Zlib</samp></a> to compress instead of calling <samp>gzip</samp>.  This can be safer and faster for not calling foreign binaries.  But if <a href="http://search.cpan.org/dist/Compress-Zlib/"><samp>Compress::Zlib</samp></a> is not installed, it will try to use <samp>gzip</samp> binary instead.  If <samp>gzip</samp> binary is not available, either, but <samp>gzip</samp> compression is required, the program will fail.</p>
+</dd>
+
+
+<dt>b, bzip2</dt>
+
+<dd>
+<p>Compress with <samp>bzip2</samp>.  <samp>arclog</samp> can use <a href="http://search.cpan.org/dist/Compress-Bzip2/"><samp>Compress::Bzip2</samp></a> to compress instead of calling <samp>bzip2</samp>.  This can be safer and faster for not calling foreign binaries.  But if <a href="http://search.cpan.org/dist/Compress-Bzip2/"><samp>Compress::Bzip2</samp></a> is not installed, it will try to use <samp>bzip2</samp> binary instead.  If <samp>bzip2</samp> binary is not available, either, but <samp>bzip2</samp> compression is required, the program will fail.</p>
+</dd>
+
+
+<dt>n, none</dt>
+
+<dd>
+<p>No compression at all.  (Why? :p)</p>
+</dd>
+</dl>
+</dd>
+
+
+<dt>--nocompress</dt>
+
+<dd>
+<p>Do not compress the archived files.  This is equal to <q><samp>--compress none</samp></q>.</p>
+</dd>
+
+
+<dt>-s, --sort</dt>
+
+<dd>
+<p>Sort the records by time (and then the record order).  Sorting eats huge memory and <abbr title="central processing unit">CPU</abbr>, so it is disabled by default.  See the description above for a detailed illustration on sorting.</p>
+</dd>
+
+
+<dt>--nosort</dt>
+
+<dd>
+<p>Do not sort the records.  This is the default.</p>
+</dd>
+
+
+<dt>-o, --override <var>mode</var></dt>
+
+<dd>
+<p>Whether we should overwrite the existing archived files.  Currently the following modes are supported:</p>
+
+
+<dl>
+<dt>o, overwrite</dt>
+
+<dd>
+<p>Overwrite existing target files.  You will lost these existing records.  Use with care.  This is helpful if you are sure the master log file has the most complete records.</p>
+</dd>
+
+
+<dt>a, append</dt>
+
+<dd>
+<p>Append the records to the existing target files.  You may destroy the log file completely by putting irrelevant entries altogether accidently.  Use with care.  This is helpful if you append want to merge 2 or more log files, for <abbr title="example">ex.</abbr>, 2 log files of different periods.</p>
+</dd>
+
+
+<dt>i, ignore</dt>
+
+<dd>
+<p>Ignore any existing target file, and discard all the records of those months.  You will lost these log records.  Use with care.  This is helpful if you are supplying log records for the missing months, or if you are merging the log records in a complex manner.</p>
+</dd>
+
+
+<dt>f, fail</dt>
+
+<dd>
+<p>Stop processing whenever a target file exists, to prevent destroying existing files by accident.  This should be mostly wanted when run from some automatic mechanism, like <samp>crontab</samp>.  So, this is the default if no terminal is found at <samp>STDIN</samp>.</p>
+</dd>
+
+
+<dt>ask</dt>
+
+<dd>
+<p>Ask you what to do when a target file exists.  This should be most wanted if you are running <samp>arclog</samp> interactively.  So, this is the default if a terminal is found at <samp>STDIN</samp>.  The answers are read from <samp>STDIN</samp>.  Since you have only one <samp>STDIN</samp>, you cannot specify this mode if you want read the log file from <samp>STDIN</samp>.  In that case, it will fall back to the <samp>fail</samp> mode.  Also, if <samp>arclog</samp> cannot get its answer from <samp>STDIN</samp>, for <abbr title="example">ex.</abbr>, on a closed <samp>STDIN</samp> like <samp>crontab</samp>, it will fall back to <samp>fail</samp> mode.</p>
+</dd>
+</dl>
+</dd>
+
+
+<dt>-k, --keep <var>mode</var></dt>
+
+<dd>
+<p>What to keep in the source file.  Current the following modes are supported:</p>
+
+<dl>
+<dt>a, all</dt>
+
+<dd>
+<p>Keep the source file after records are archived.</p>
+</dd>
+
+
+<dt>r, restart</dt>
+
+<dd>
+<p>Restart the source log file after records are archived.</p>
+</dd>
+
+
+<dt>d, delete</dt>
+
+<dd>
+<p>Delete the source log file after records are archived.</p>
+</dd>
+
+
+<dt>t, this-month</dt>
+
+<dd>
+<p>Archive and strip records of previous months off from the log file.  Keep the records of this month in the source log file, to be archived next month.  This is designed to be run from <samp>crontab</samp> monthly, so this is the default.</p>
+</dd>
+</dl>
+</dd>
+
+
+<dt>-d, --debug</dt>
+
+<dd>
+<p>Show the detailed debugging messages.</p>
+</dd>
+
+
+<dt>-q, --quiet</dt>
+
+<dd>
+<p>Shihhhhhh.  Only yell when errors.</p>
+</dd>
+
+
+<dt>-h, --help</dt>
+
+<dd>
+<p>Display the help message and exit.</p>
+</dd>
+
+
+<dt>-v, --version</dt>
+
+<dd>
+<p>Output version information and exit.</p>
+</dd>
+</dl>
+
+
+<h2>Copyright</h2>
+
+<p>Copyright &copy; 2001-2007 imacat..</p>
+
+<p>This program is free software: you can redistribute it and/or modify it under the terms of the <cite><acronym title="GNU&rsquo;s Not UNIX">GNU</acronym> General Public License</cite> as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but <em>without any warranty</em>; without even the implied warranty of <em>merchantability</em> or <em>FITNESS FOR A PARTICULAR PURPOSE</em>.  See the <cite><acronym title="GNU&rsquo;s Not UNIX">GNU</acronym> General Public License</cite> for more details.</p>
+
+<p>You should have received a copy of the <cite><acronym title="GNU&rsquo;s Not UNIX">GNU</acronym> General Public License</cite> along with this program.  If not, see <samp>&lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;</samp>.</p>
+
+
+<h2>Release Notes</h2>
+
+<p>Please read the <samp>NEWS</samp> for the new functions and bug fixes.</p>
+
+
+<h2>Support</h2>
+
+<p><samp>arclog</samp> is hosted on <a href="https://sourceforge.net/">SourceForge</a>, <a href="http://www.cpan.org/"><acronym title="Comprehensive Perl Archive Network">CPAN</acronym></a> and <a href="http://www.imacat.idv.tw/">Tavern IMACAT&rsquo;s</a>.  For the latest infomation, see</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/"><samp>arclog</samp> web site at SourceForge</a>.</p></li>
+<li><p><a href="http://sourceforge.net/projects/arclog/"><samp>arclog</samp> project page at SourceForge</a>.</p></li>
+<li><p><a href="http://search.cpan.org/dist/arclog/"><samp>arclog</samp> project page at <abbr title="Comprehensive Perl Archive Network">CPAN</abbr></a>.</p></li>
+<li><p><a href="http://www.imacat.idv.tw/tech/arclog.html"><samp>arclog</samp> page at Tavern IMACAT&rsquo;s</a>.</p></li>
+</ul>
+
+<p>There is a <a href="mailto:arclog-users&#64;lists.sourceforge.net"><samp>arclog</samp> mailing list</a> hosted at <a href="https://sourceforge.net/">SourceForge</a>.  Please submit your questions, suggestions or bug reports there.  It is a <a href="http://www.list.org/">Mailman</a> mailing list.  For more information, see the <a href="https://lists.sourceforge.net/lists/listinfo/arclog-users"><samp>arclog</samp> mailing list page</a>.  Alternatively, you can send a mail to the <a href="mailto:arclog-users-request&#64;lists.sourceforge.net"><acronym title="electronic mail">e-mail</acronym> command mailbox</a> with the subject <samp>help</samp> for a list of available <acronym title="electronic mail">e-mail</acronym> commands.</p>
+
+</div>
+
+
+<hr />
+<div id="footer" class="footer" title="Page Footer Area">
+<address>By <a href="mailto:imacat&#64;mail.imacat.idv.tw">imacat</a>, first version 2001-06-08, last updated 2008-11-18</address>
+
+<address>Copyright &copy; 2010 imacat.  Please read the <a href="fdl.txt">copyright</a> before copying.</address>
+</div>
+
+</body>
+</html>

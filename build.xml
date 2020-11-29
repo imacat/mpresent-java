@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- build.xml: Ant build file for the mpresent project -->
+<!--   by imacat <imacat@mail.imacat.idv.tw>, 2010-08-15 -->
+<project name="mpresent" default="help" basedir=".">
+<!-- property: The build variables -->
+<loadfile property="project.version" srcfile="${basedir}/VERSION">
+    <filterchain>
+        <striplinebreaks />
+    </filterchain>
+</loadfile>
+<property name="build.dir" value="build" />
+<property name="dist.build.dir" value="${build.dir}/dist" />
+<property name="dist.dir" value="${basedir}" />
+
+<!-- help: Display the help information -->
+<target name="help">
+    <echo level="info" message="Available targets:" />
+    <echo level="info" message=" dist:        Create the pacakge distribution as ${dist.dir}/${ant.project.name}-${project.version}.zip" />
+    <echo level="info" message=" clean:       Clean-up the build files" />
+    <echo level="info" message=" help:        Display this help" />
+</target>
+
+<!-- -distdir: Create the distribution directory -->
+<target name="-distdir">
+    <copy todir="${dist.build.dir}/${ant.project.name}-${project.version}"
+            preservelastmodified="true">
+        <fileset dir="${basedir}"
+            excludes="${build.dir}/ ${ant.project.name}-*.zip" />
+    </copy>
+</target>
+
+<!-- dist: Create the pacakge distribution -->
+<target name="dist" depends="-distdir">
+    <zip destfile="${dist.dir}/${ant.project.name}-${project.version}.zip"
+        basedir="${dist.build.dir}" />
+</target>
+
+<!-- clean: Clean-up the build files -->
+<target name="clean">
+    <delete dir="${build.dir}" />
+    <delete file="${dist.dir}/${ant.project.name}-${project.version}.zip" />
+    <delete verbose="true">
+        <fileset file="${dist.dir}/${ant.project.name}-*.zip" />
+    </delete>
+</target>
+</project>

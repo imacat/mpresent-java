@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="Big5" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-tw">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="author" content="依瑪貓" />
+<meta name="copyright" content="&copy; 2010 依瑪貓。" />
+<meta name="keywords" content="整理, Apache, Syslog, 記錄檔" />
+<link rel="alternate" type="application/xhtml+xml" href="mpresent.zh-cn.html"
+     hreflang="zh-cn" title="简体中文" />
+<link rel="alternate" type="application/xhtml+xml" href="mpresent.en.html"
+     hreflang="en-us" title="English" />
+<link rel="copyright" type="text/plain" href="fdl.txt" />
+<link rel="author" href="mailto:imacat&#64;mail.imacat.idv.tw" />
+<style type="text/css">
+h2, em {
+    text-transform: uppercase;
+}
+.accessguide {
+    font-size: 0.5em;
+    float: left;
+    width: 0.5em;
+}
+q {
+    quotes: "「" "」" "『" "』";
+}
+q:lang(en) {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+cite {
+    quotes: "《" "》";
+}
+</style>
+<title>mpresent 0.01 版</title>
+</head>
+<body>
+
+<div class="langs" title="語言切換區">
+    <span>正體中文</span> |
+    <span xml:lang="zh-cn"><a href="mpresent.zh-cn.html"
+        title="切换到本页的简体中文版。"
+        hreflang="zh-cn">简体中文</a></span> |
+    <span xml:lang="en"><a href="mpresent.en.html"
+        title="Switch to the English version of this page."
+        hreflang="en-us">English</a></span>
+</div>
+<hr />
+
+
+<div id="body" class="body" title="網頁內文區">
+<div class="accessguide"><a accesskey="C"
+    href="#body" title="網頁內文區">:::</a></div>
+
+<h1><samp xml:lang="en">mpresent</samp> 0.01 版</h1>
+
+
+<h2>最新消息</h2>
+
+<dl>
+<dt>2007-12-03</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog</samp> 最新版本 0.01 。說明文件修正。若妳之前安裝了 <samp xml:lang="en">arclog</samp> 3.00 版或之後的版本，不需要昇級新版。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog-0.01.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog</samp> 0.01 版</a>。</p>
+</dd>
+
+
+<dt>2007-12-03</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog</samp> 最新版本 3.03 。修正測試套件。所需 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 版本號碼改用相容於舊版的號碼格式，以消除 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 5.10 的警告訊息。若妳之前安裝了 <samp xml:lang="en">arclog</samp> 3.00 版或之後的版本，不需要昇級新版。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog-3.03.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog</samp> 3.03 版</a>。</p>
+</dd>
+
+
+<dt>2007-11-30</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog</samp> 最新版本 3.02 。修正測試套件，以處理日光節約時間問題。若妳之前安裝了 <samp xml:lang="en">arclog</samp> 3.00 版或之後的版本，不需要昇級新版。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog-3.02.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog</samp> 3.02 版</a>。</p>
+</dd>
+
+
+<dt>2007-11-28</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog</samp> 最新版本 3.01 。修正測試套件，以協助釐清 <abbr title="Comprehensive Perl Archive Network">CPAN</abbr> 測試回報的錯誤。若妳之前安裝了 <samp xml:lang="en">arclog</samp> 3.00 版，不需要昇級新版。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog-3.01.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog</samp> 3.01 版</a>。</p>
+</dd>
+
+
+<dt>2007-11-28</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog</samp> 最新版本 3.00 。從 <a href="http://www.imacat.idv.tw/tech/reslog.html"><samp xml:lang="en">reslog</samp></a> 借過來的全新程式碼，檔名也從 <samp xml:lang="en">arclog.pl</samp> 改為 <samp xml:lang="en">arclog</samp> 。新的物件導向處理器，可順利處理各種壓縮法及檔案格式。安裝系統由 <a href="http://www.gnu.org/software/autoconf/"><acronym title="GNU&rsquo;s Not UNIX">GNU</acronym> <samp>autoconf</samp></a> 改用 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 的 <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/"><samp>ExtUtils::MakeMaker</samp></a> 和 <a href="http://search.cpan.org/dist/Module-Build/"><samp>Module::Build</samp></a> 。新加上完整的測試套件，協助程式品管。版權更新為 <a href="http://www.gnu.org/licenses/gpl-3.0.html" hreflang="en" xml:lang="en"><abbr title="GNU General Public License version 3" xml:lang="en">GPLv3</abbr></a> 。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog-3.00.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog</samp> 3.00 版</a>。</p>
+</dd>
+
+
+<dt>2002-09-26</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog.pl</samp> 最新版本 2.1.0 。這是 2.1.0 的最終版，加上了 <samp xml:lang="en">bzip2</samp> 壓縮的支援，用 <samp xml:lang="en">gzip</samp> 程式代替 <a href="http://search.cpan.org/dist/Compress-Zlib/" hreflang="en" xml:lang="en"><samp>Compress::Zlib</samp></a> 壓縮，並改用 <a href="http://www.gnu.org/software/autoconf/" hreflang="en" xml:lang="en"><acronym title="GNU&rsquo;s Not UNIX" xml:lang="en">GNU</acronym> <samp>autoconf</samp></a> 安裝設定程式。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog.pl-2.1.0.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog.pl</samp> 2.1.0</a> 。</p>
+</dd>
+
+
+<dt>2002-09-18</dt>
+
+<dd>
+<p><samp xml:lang="en">arclog.pl</samp> 最新版本 2.1.0dev2 。本版修正了幾個說明文件的錯誤，並把 <a href="https://sourceforge.net/" hreflang="en" xml:lang="en">SourceForge</a> 加進 <samp xml:lang="en">arclog.pl</samp> 的下載網址中。妳可以把它當做<q>申請 <span xml:lang="en">SourceForge</span> 紀念版</q>。原則上，不需要急著昇級。<a href="ftp://ftp.imacat.idv.tw/pub/arclog/arclog.pl-2.1.0dev2.tar.gz" type="application/x-gzip">下載 <samp xml:lang="en">arclog.pl</samp> 2.1.0dev2</a> 。</p>
+</dd>
+
+
+<dt>2002-09-17</dt>
+
+<dd>
+<p>好消息！ <samp xml:lang="en">arclog.pl</samp> 已開始架設於 <a href="https://sourceforge.net/projects/arclog/" xml:lang="en">SourceForge</a> 囉！（雖然我幾乎還完全搞不清楚要怎麼架…摸索中… ^^; ）</p>
+</dd>
+</dl>
+
+
+
+<h2>說明</h2>
+
+<p><dfn xml:lang="en"><samp>arclog</samp></dfn> 是記錄檔每月歸檔程式，將記錄檔中，前月的記錄按月份壓縮歸檔，以節省硬碟空間，並避免記錄檔被有心人士破壞。</p>
+
+<p><samp xml:lang="en">arclog</samp> 目前支援 <a href="http://httpd.apache.org/" hreflang="en" xml:lang="en">Apache</a> 、 <span xml:lang="en">Syslog</span> 、 <a href="http://www.ntp.org/" hreflang="en" xml:lang="en"><abbr title="network time protocol">NTP</abbr></a> 、 <span xml:lang="en">Apache 1 <abbr title="secure socket layer">SSL</abbr> engine log</span> 及我自己用的括弧 <acronym title="International Organization for Standardization" xml:lang="en">ISO</acronym> 修正格式五種格式的記錄檔，與 <samp xml:lang="en">gzip</samp> 和 <samp xml:lang="en">bzip2</samp> 兩種壓縮法。很多程式都可以用 <span xml:lang="en">Apache</span> 相容記錄檔格式記錄，如 <a href="http://www.cups.org/" hreflang="en" xml:lang="en"><abbr title="Common UNIX Printing System">CUPS</abbr></a> 、 <a href="http://www.proftpd.org/" hreflang="en" xml:lang="en">ProFTPD</a> 、 <a href="http://www.pureftpd.org/" hreflang="en" xml:lang="en">Pure-FTPd</a>&hellip;等， <samp xml:lang="en">arclog</samp> 也可以歸檔這些 <span xml:lang="en">Apache</span> 相容格式的記錄檔。</p>
+
+
+<h2>注意事項</h2>
+
+<ul>
+<li><p>歸類記錄檔<em>很耗時間</em>。為減少佔用原記錄檔的時間， <samp xml:lang="en">arclog</samp> 會先把原記錄檔複製到暫時工作檔，視需要把原記錄檔歸零，再慢慢在暫時工作檔上作業。不過仍請注意下列事項：</p>
+    <ol>
+    <li><p>如果原記錄檔很大（好幾百 <abbr title="megabyte" xml:lang="en">MB</abbr> ），光複製檔案就很花時間了。這種情況下，最好先關閉記錄程式，等整理完以後，再繼續記錄，以避免記錄錯亂。若平常有定期歸檔，記錄檔就不會無限制膨脹了。</p></li>
+    <li><p>若 <samp xml:lang="en">arclog</samp> 執行到一半因故中斷，會留下殘存的暫時工作檔。日後 <samp xml:lang="en">arclog</samp> 執行時，碰到之前殘存的暫時工作檔，會停止執行。要先處理掉之前的暫時工作檔，才能繼續。暫時工作檔只是原檔的複本，只要改個檔名再歸檔一次，就可以了。</p></li>
+    </ol>
+</li>
+
+<li><p>沒有特別理由，最好不要排序。排序的潛在問題如下：</p>
+    <ol>
+    <li><p>記錄檔很大時，排序<em>會吃掉很多記憶體</em>。所需記憶體依歸檔後每個月記錄筆數而定。新版的 <span xml:lang="en">Linux</span> 和 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> 系統有記憶體耗用保護，會中斷吃掉太多記憶體的程式，不過這還是要花好幾分鐘，這幾分鐘內系統會完全當掉不動。我不知道別的作業系統有沒有記憶體耗用保護。如果妳要玩，風險自負。</p></li>
+    <li><p>所有支援的記錄檔格式，時間最小單位為<em><q>秒</q></em>。同一秒內的記錄會先以記錄檔順序（若同時歸檔好幾個記錄檔），再以記錄本身出現的次序排序。這樣設計儘可能讓排序歸檔後同一秒內的記錄次序，和事件真正的發生順序一致，但也無法完全保證。若同一秒內的事件次序很重要，妳要自行小心。</p></li>
+    </ol>
+</li>
+
+<li><p>歸檔 <span xml:lang="en">Syslog</span> 和 <abbr title="network time protocol" xml:lang="en">NTP</abbr> 記錄檔時，請特別注意： <em><span xml:lang="en">Syslog</span> 和 <abbr title="network time protocol" xml:lang="en">NTP</abbr> 記錄檔沒有記年。</em> <samp xml:lang="en">arclog</samp> 用 <a href="http://search.cpan.org/dist/TimeDate/" hreflang="en" xml:lang="en"><samp>Date::Parse</samp></a> 模組解讀時間。無年份時， <a href="http://search.cpan.org/dist/TimeDate/" hreflang="en" xml:lang="en"><samp>Date::Parse</samp></a> 會把年份設在<q>這個月</q>到<q>去年的下個月</q>之間。例如，若今天是 2001-06-08 ，那年份會設在 2001-06-30 到 2000-07-01 之間。我原則上贊成這樣。不過，若妳的 <span xml:lang="en">Syslog</span> 或 <abbr title="network time protocol" xml:lang="en">NTP</abbr> 記錄檔超過一年整理歸檔，不要跑 <samp xml:lang="en">arclog</samp> ，否則記錄檔會大亂。</p></li>
+
+<li><p>從標準輸入讀記錄檔，請注意下列事項：</p>
+    <ol>
+    <li><p>若要讀標準輸入，就一定要設定歸檔時，檔名的開頭，不然不知道怎麼歸檔後要存到哪裏去。</p></li>
+    <li><p>標準輸入無法刪除、歸零或保留部份內容。若要讀標準輸入，原檔保留模式會自動退回成全部保留。一次讀入多檔時，若其中有標準輸入，會一律退回全部保留，以避免混亂。</p></li>
+    <li><p><samp xml:lang="en">ask</samp> 模式的回答也是從標準輸入讀的。因為標準輸入只有一個，所以從標準輸入讀檔時，無法跑 <samp xml:lang="en">ask</samp> 模式，會自動退回到 <samp xml:lang="en">fail</samp> 模式。</p></li>
+    </ol>
+</li>
+
+<li><p>我建議安裝 <a href="http://search.cpan.org/dist/File-MMagic/" hreflang="en" xml:lang="en"><samp>File::MMagic</samp></a> ，儘量不要用 <samp xml:lang="en">file</samp> 程式。 <a href="http://search.cpan.org/dist/File-MMagic/" hreflang="en" xml:lang="en"><samp>File::MMagic</samp></a> 內建的檔案類型表好像比 <samp xml:lang="en">file</samp> 程式準確。若不是 <samp xml:lang="en">gzip</samp> 或 <samp xml:lang="en">bzip2</samp> 壓縮檔， <samp xml:lang="en">arclog</samp> 會把視為當成純文字檔。若壓縮檔被誤判為圖檔， <samp xml:lang="en">arclog</samp> 會當成純文字檔，直接讀記錄，並以錯誤結束。就算錯誤也不會弄亂原記錄檔，不過多少有點麻煩。</p></li>
+</ul>
+
+
+<h2>系統需求</h2>
+
+<ol>
+<li><p><acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 5.8.0 以上。 <samp xml:lang="en">arclog</samp> 用三個參數的 <samp xml:lang="en">open()</samp> 來複製檔案操作，我還不知道怎麼改寫到更早的版本上執行。若妳可以改寫到更早的版本上執行，請告訴我。妳可以輸入 <q xml:lang="en"><samp>perl -v</samp></q> 查詢妳目前的 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 版本。如果妳沒有 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 或需要昇級，可以到 <a href="http://www.perl.com/" hreflang="en"><acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 網站</a>下載安裝最新版 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 。若妳是用 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> ，可以到 <a href="http://www.activestate.com/" hreflang="en"><span xml:lang="en">ActiveState</span> 公司</a>下載 <span xml:lang="en">ActivePerl</span> 安裝。</p></li>
+
+<li><p>需搭配的 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 模組：</p>
+    
+    <dl>
+    <dt><a href="http://search.cpan.org/dist/TimeDate/" hreflang="en" xml:lang="en"><samp>Date::Parse</samp></a></dt>
+    
+    <dd>
+    <p>這是辨識記錄時間用的。妳可以<a href="http://search.cpan.org/dist/TimeDate/" hreflang="en">由 <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 模組庫下載安裝 <samp xml:lang="en">Date::Parse</samp> </a>，或用 <span xml:lang="en"><samp>CPAN</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpan Date::Parse</samp></q> 安裝，或用 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpanp i Date::Parse</samp></q> 安裝。若妳是 <span xml:lang="en">Debian/Ubandu Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>apt-get install libtimedate-perl</samp></q> 安裝。若妳是 <span xml:lang="en">Red Hat/Fedora/CentOS Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>yum install perl-TimeDate</samp></q> 安裝。若妳是 <span xml:lang="en">FreeBSD</span> 使用者，可以執行 <q xml:lang="en"><samp>ports install p5-TimeDate</samp></q> 安裝。若妳是 <span xml:lang="en">ActivePerl</span> 使用者，可以執行 <q xml:lang="en"><samp>ppm install Date::Parse</samp></q> 安裝。</p>
+    </dd>
+    </dl>
+    
+    <p>若妳由 <samp xml:lang="en">CPAN</samp> 或 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 安裝 <samp xml:lang="en">arclog</samp> ，會自動幫妳安裝以上所需的模組。</p>
+</li>
+
+<li><p>選配的 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 模組：</p>
+    
+    <dl>
+    <dt><a href="http://search.cpan.org/dist/File-MMagic/" hreflang="en" xml:lang="en"><samp>File::MMagic</samp></a></dt>
+    
+    <dd>
+    <p>這是檢查檔案類型用的。若沒有安裝， <samp xml:lang="en">arclog</samp> 會找 <samp xml:lang="en">file</samp> 程式代替。若還找不到， <samp xml:lang="en">arclog</samp> 會改用檔尾（副檔名）判斷檔案類型。這時若從標準輸入讀檔， <samp xml:lang="en">arclog</samp> 就無法判斷了。妳可以<a href="http://search.cpan.org/dist/File-MMagic/" hreflang="en">由 <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 模組庫下載安裝 <samp xml:lang="en">File::MMagic</samp> </a>，或用 <span xml:lang="en"><samp>CPAN</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpan File::MMagic</samp></q> 安裝，或用 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpanp i File::MMagic</samp></q> 安裝。若妳是 <span xml:lang="en">Debian/Ubandu Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>apt-get install libfile-mmagic-perl</samp></q> 安裝。若妳是 <span xml:lang="en">Red Hat/Fedora/CentOS Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>yum install perl-File-MMagic</samp></q> 安裝。若妳是 <span xml:lang="en">FreeBSD</span> 使用者，可以執行 <q xml:lang="en"><samp>ports install p5-File-MMagic</samp></q> 安裝。若妳是 <span xml:lang="en">ActivePerl</span> 使用者，可以執行 <q xml:lang="en"><samp>ppm install File::MMagic</samp></q> 安裝。若妳要在 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> 下使用 <samp xml:lang="en">file.exe</samp> 程式，可以由 <a href="http://gnuwin32.sourceforge.net/" hreflang="en-us"><span xml:lang="en">GnuWin32</span> 網站</a>下載。請確認下載後，存檔在系統的路徑下，檔名為 <samp xml:lang="en">file.exe</samp> 。</p>
+    
+    <p>建議用 <a href="http://search.cpan.org/dist/File-MMagic/" hreflang="en" xml:lang="en"><samp>File::MMagic</samp></a> 。 <samp xml:lang="en">file</samp> 程式偶爾會誤判。</p>
+    </dd>
+    
+    <dt><a href="http://search.cpan.org/dist/Compress-Zlib/" hreflang="en" xml:lang="en"><samp>Compress::Zlib</samp></a></dt>
+    
+    <dd>
+    <p>這是處理 <samp xml:lang="en">gzip</samp> 壓縮檔用的，只有在處理 <samp xml:lang="en">gzip</samp> 壓縮檔才會用到。若要用時沒有安裝， <samp xml:lang="en">arclog</samp> 會試著改用 <samp xml:lang="en">gzip</samp> 程式代替。若還找不到， <samp xml:lang="en">arclog</samp> 就無法執行。妳可以<a href="http://search.cpan.org/dist/Compress-Zlib/" hreflang="en">由 <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 模組庫下載安裝 <samp xml:lang="en">Compress::Zlib</samp> </a>，或用 <span xml:lang="en"><samp>CPAN</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpan Compress::Zlib</samp></q> 安裝，或用 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpanp i Compress::Zlib</samp></q> 安裝。若妳是 <span xml:lang="en">Debian/Ubandu Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>apt-get install libcompress-zlib-perl</samp></q> 安裝。若妳是 <span xml:lang="en">Red Hat/Fedora/CentOS Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>yum install perl-Compress-Zlib</samp></q> 安裝。若妳是 <span xml:lang="en">FreeBSD</span> 使用者，可以執行 <q xml:lang="en"><samp>ports install p5-Compress-Zlib</samp></q> 安裝。若妳是 <span xml:lang="en">ActivePerl</span> 使用者，可以執行 <q xml:lang="en"><samp>ppm install Compress::Zlib</samp></q> 安裝。若妳要在 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> 下使用 <samp xml:lang="en">gzip.exe</samp> 程式，可以由 <a href="http://www.gzip.org/" hreflang="en"><samp xml:lang="en">gzip</samp> 網站</a>下載。請確認下載後，存檔在系統的路徑下，檔名為 <samp xml:lang="en">gzip.exe</samp> 。</p>
+    </dd>
+    
+    <dt><a href="http://search.cpan.org/dist/Compress-Bzip2/" hreflang="en" xml:lang="en"><samp>Compress::Bzip2</samp></a> 第二版以上</dt>
+    
+    <dd>
+    <p>這是處理 <samp xml:lang="en">bzip2</samp> 壓縮檔用的，只有在處理 <samp xml:lang="en">bzip2</samp> 壓縮檔才會用到。若要用時沒有安裝， <samp xml:lang="en">arclog</samp> 會試著改用 <samp xml:lang="en">bzip2</samp> 程式代替。若還找不到， <samp xml:lang="en">arclog</samp> 就無法執行。妳可以<a href="http://search.cpan.org/dist/Compress-Bzip2/" hreflang="en">由 <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 模組庫下載安裝 <samp xml:lang="en">Compress::Bzip2</samp> </a>，或用 <span xml:lang="en"><samp>CPAN</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpan Compress::Bzip2</samp></q> 安裝，或用 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpanp i Compress::Bzip2</samp></q> 安裝。若妳是 <span xml:lang="en">Debian/Ubandu Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>apt-get install libcompress-bzip2-perl</samp></q> 安裝。若妳是 <span xml:lang="en">Red Hat/Fedora/CentOS Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>yum install perl-Compress-Bzip2</samp></q> 安裝。若妳是 <span xml:lang="en">FreeBSD</span> 使用者，可以執行 <q xml:lang="en"><samp>ports install p5-Compress-Bzip2</samp></q> 安裝。若妳是 <span xml:lang="en">ActivePerl</span> 使用者，可以執行 <q xml:lang="en"><samp>ppm install Compress::Bzip2</samp></q> 安裝。若妳要在 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> 下使用 <samp xml:lang="en">bzip2.exe</samp> 程式，可以由 <a href="http://www.bzip.org/" hreflang="en"><samp xml:lang="en">bzip2</samp> 網站</a>下載。請確認下載後，存檔在系統的路徑下，檔名為 <samp xml:lang="en">bzip2.exe</samp> 。</p>
+    </dd>
+    
+    <dt><a href="http://search.cpan.org/dist/TermReadKey/" hreflang="en" xml:lang="en"><samp>Term::ReadKey</samp></a></dt>
+    
+    <dd>
+    <p>這是顯示進度列用的，若沒有安裝，就不會顯示進度列。此外不會有任何問題。進度列可以讓妳對 <samp xml:lang="en">arclog</samp> 的工作進度一目瞭然。妳可以<a href="http://search.cpan.org/dist/TermReadKey/" hreflang="en">由 <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 模組庫下載安裝 <samp xml:lang="en">Term::ReadKey</samp> </a>，或用 <span xml:lang="en"><samp>CPAN</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpan Term::ReadKey</samp></q> 安裝，或用 <span xml:lang="en"><samp>CPANPLUS</samp> Shell</span> 執行 <q xml:lang="en"><samp>cpanp i Term::ReadKey</samp></q> 安裝。若妳是 <span xml:lang="en">Debian/Ubandu Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>apt-get install libterm-readkey-perl</samp></q> 安裝。若妳是 <span xml:lang="en">Red Hat/Fedora/CentOS Linux</span> 使用者，可以執行 <q xml:lang="en"><samp>yum install perl-TermReadKey</samp></q> 安裝。若妳是 <span xml:lang="en">FreeBSD</span> 使用者，可以執行 <q xml:lang="en"><samp>ports install p5-Term-ReadKey</samp></q> 安裝。若妳是 <span xml:lang="en">ActivePerl</span> 使用者，可以執行 <q xml:lang="en"><samp>ppm install Term::ReadKey</samp></q> 安裝。</p>
+    </dd>
+    </dl>
+</li>
+</ol>
+
+
+<h2>下載</h2>
+
+<p><samp xml:lang="en">arclog</samp> 的官方網站在：</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/"><span xml:lang="en">SourceForge</span> 上的 <samp xml:lang="en">arclog</samp> 網站。</a></p></li>
+
+<li><p><a href="https://sourceforge.net/projects/arclog/" hreflang="en"><samp xml:lang="en">arclog</samp> <span xml:lang="en">SourceForge</span> 專案頁。</a></p></li>
+
+<li><p><a href="http://search.cpan.org/~imacat/arclog/" hreflang="en"><samp xml:lang="en">arclog</samp> <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 專案頁。</a></p></li>
+
+<li><p><a href="http://www.imacat.idv.tw/tech/arclog.html">旅舍依瑪 <samp xml:lang="en">arclog</samp> 網頁</a></p></li>
+</ul>
+
+<p>最新版 <samp xml:lang="en">arclog</samp> 可由下列位址下載：</p>
+
+<ul>
+<li><p><a href="https://sourceforge.net/project/showfiles.php?group_id=62499" hreflang="en"><samp xml:lang="en">arclog</samp> <span xml:lang="en">SourceForge</span> 下載頁。</a></p></li>
+
+<li><p><a href="http://search.cpan.org/~imacat/arclog/" hreflang="en"><samp xml:lang="en">arclog</samp> <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 專案頁。</a></p></li>
+
+<li><p><a href="ftp://ftp.imacat.idv.tw/pub/arclog/">旅舍依瑪 <abbr title="File Transfer Protocol" xml:lang="en">FTP</abbr> 站。</a></p></li>
+</ul>
+
+<p>依瑪貓的 <abbr title="Pretty Good Privacy" xml:lang="en">PGP</abbr> 公鑰在：</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/pgpkey.asc"><samp xml:lang="en">arclog</samp> <span xml:lang="en">SourceForge</span> 網站上的依瑪貓 <abbr title="Pretty Good Privacy" xml:lang="en">PGP</abbr> 公鑰。</a></p></li>
+
+<li><p><a href="http://www.imacat.idv.tw/me/pgpkey.asc">旅舍依瑪上的依瑪貓 <abbr title="Pretty Good Privacy" xml:lang="en">PGP</abbr> 公鑰。</a></p></li>
+</ul>
+
+
+<h2>安裝</h2>
+
+<p>若妳是由 <samp xml:lang="en">arclog.pl</samp> 2.1.1dev4 以前的版本昇級，請參閱 <samp xml:lang="en">UPGRADE.zh-tw</samp> 檔的昇級說明。</p>
+
+<h3>以 <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/" hreflang="en" xml:lang="en"><samp>ExtUtils::MakeMaker</samp></a> 安裝</h3>
+
+<p><samp xml:lang="en">arclog</samp> 用 <acronym title="Practical Extraction and Reporting Language" xml:lang="en">Perl</acronym> 標準的 <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/" hreflang="en" xml:lang="en"><samp>ExtUtils::MakeMaker</samp></a> 安裝，程序如下：</p>
+
+<blockquote xml:lang="en"><pre>
+% perl Makefile.PL
+% make
+% make test
+% make install
+</pre></blockquote>
+
+<p>在 <q xml:lang="en"><samp>make install</samp></q> 前，請先確認妳有在安裝目錄存檔的權限。通常這時候要切換為 <samp xml:lang="en">root</samp> ，才能安裝存檔。</p>
+
+<p>若妳是用 <span xml:lang="en"><abbr title="Microsoft">MS</abbr>-Windows</span> 下的 <span xml:lang="en">ActivePerl</span> ， <samp xml:lang="en">make</samp> 請改用 <samp xml:lang="en">nmake</samp> 。 <a href="ftp://ftp.microsoft.com/Softlib/MSLFILES/nmake15.exe" type="application/x-dosexec"><samp xml:lang="en">nmake</samp> 可由微軟的 <abbr title="File Transfer Protocol" xml:lang="en">FTP</abbr> 站下載</a>。</p>
+
+<p>若要安裝到其它地方，請設定好 <samp xml:lang="en">PREFIX</samp> 。例如，一般使用者，要安裝在自己的目錄下時：</p>
+
+<blockquote xml:lang="en"><pre>
+% perl Makefile.PL PREFIX=/home/jessica
+</pre></blockquote>
+
+<p>要知道更多安裝選項的細節，請參閱 <a href="http://search.cpan.org/dist/ExtUtils-MakeMaker/" hreflang="en" xml:lang="en"><samp>ExtUtils::MakeMaker</samp></a> 的說明（請執行 <q xml:lang="en"><samp>perldoc ExtUtils::MakeMaker</samp></q> ）。</p>
+
+
+<h3>以 <a href="http://search.cpan.org/dist/Module-Build/" hreflang="en" xml:lang="en"><samp>Module::Build</samp></a> 安裝</h3>
+
+<p>若妳喜歡，也可以用 <a href="http://search.cpan.org/dist/Module-Build/" hreflang="en" xml:lang="en"><samp>Module::Build</samp></a> 安裝，程序如下：</p>
+
+<blockquote xml:lang="en"><pre>
+% perl Build.PL
+% ./Build
+% ./Build test
+% ./Build install
+</pre></blockquote>
+
+<p>在 <q xml:lang="en"><samp>./Build install</samp></q> 前，請先確認妳有在安裝目錄存檔的權限。通常這時候要切換為 <samp xml:lang="en">root</samp> ，才能安裝存檔。</p>
+
+<p>若要安裝到其它地方，請設定好 <samp xml:lang="en">--prefix</samp> 。例如，一般使用者，要安裝在自己的目錄下時：</p>
+
+<blockquote><pre xml:lang="en">
+% perl Build.PL --prefix=/home/jessica
+</pre></blockquote>
+
+<p>要知道更多安裝選項的細節，請參閱 <a href="http://search.cpan.org/dist/Module-Build/" hreflang="en" xml:lang="en"><samp>Module::Build</samp></a> 的說明（請執行 <q xml:lang="en"><samp>perldoc Module::Build</samp></q> ）。</p>
+
+
+<h2>命令列參數</h2>
+
+<pre>
+./arclog [參數] 記錄檔檔名&hellip; [歸檔檔名開頭]
+./arclog [-h|-v]
+</pre>
+
+
+<dl>
+<dt xml:lang="en"><var xml:lang="zh-tw">記錄檔檔名</var></dt>
+
+<dd>
+<p>要整理歸檔的記錄檔檔名。若要從標準輸入讀記錄檔，請設定成 <q><samp>-</samp></q> 。可同時指定許多檔案。支援 <samp xml:lang="en">gzip</samp> 或 <samp xml:lang="en">bzip2</samp> 壓縮檔。</p>
+</dd>
+
+
+<dt xml:lang="en"><var xml:lang="zh-tw">歸檔檔名開頭</var></dt>
+
+<dd>
+<p>歸檔檔名用的開頭，歸檔後的檔案會取名叫<q><samp>開頭.yymmdd</samp></q>，如：<samp>開頭.200101</samp> 、<samp>開頭.200102</samp> &hellip;等。如果沒有設定，會用記錄檔的檔名當開頭。若妳要從標準輸入讀記錄檔，就一定要設歸檔檔名開頭。這裏不能用 <q><samp>-</samp></q> （標準輸入），因為這裏設定的是檔名的開頭，不是檔名。</p>
+</dd>
+
+
+<dt xml:lang="en">-c, --compress <var xml:lang="zh-tw">壓縮法</var></dt>
+
+<dd>
+<p>設定歸檔用的壓縮法。記錄大多都長得很像，壓縮掉會省下非常多的空間。（不然幹嘛歸檔？ ^_*&rsquo; ）目前支援下列的壓縮法：</p>
+
+
+<dl>
+<dt xml:lang="en">g, gzip</dt>
+
+<dd>
+<p>用 <samp xml:lang="en">gzip</samp> 壓縮。預設是用 <samp xml:lang="en">gzip</samp> 壓縮。 <samp xml:lang="en">arclog</samp> 可以用 <a href="http://search.cpan.org/dist/Compress-Zlib/" hreflang="en" xml:lang="en"><samp>Compress::Zlib</samp></a> 來代替 <samp xml:lang="en">gzip</samp> 壓縮，不用呼叫外部程式，比較快比較安全。不過如果妳沒有裝 <a href="http://search.cpan.org/dist/Compress-Zlib/" hreflang="en" xml:lang="en"><samp>Compress::Zlib</samp></a> ， <samp xml:lang="en">arclog</samp> 還是會自己改用 <samp xml:lang="en">gzip</samp> 程式壓縮。但如果連 <samp xml:lang="en">gzip</samp> 程式都沒有，卻要用到 <samp xml:lang="en">gzip</samp> 壓縮，就沒有辦法了，無法執行。</p>
+</dd>
+
+
+<dt xml:lang="en">b, bzip2</dt>
+
+<dd>
+<p>用 <samp xml:lang="en">bzip2</samp> 壓縮。 <samp xml:lang="en">arclog</samp> 可以用 <a href="http://search.cpan.org/dist/Compress-Bzip2/" hreflang="en" xml:lang="en"><samp>Compress::Bzip2</samp></a> 來代替 <samp xml:lang="en">bzip2</samp> 壓縮，不用呼叫外部程式，比較快比較安全。不過如果妳沒有裝 <a href="http://search.cpan.org/dist/Compress-Bzip2/" hreflang="en" xml:lang="en"><samp>Compress::Bzip2</samp></a> ， <samp xml:lang="en">arclog</samp> 還是會自己改用 <samp xml:lang="en">bzip2</samp> 程式壓縮。但如果連 <samp xml:lang="en">bzip2</samp> 程式都沒有，卻要用到 <samp xml:lang="en">bzip2</samp> 壓縮，就沒有辦法了，無法執行。</p>
+</dd>
+
+
+<dt xml:lang="en">n, none</dt>
+
+<dd>
+<p>不要壓縮。（妳沒搞錯吧？ :p ）</p>
+</dd>
+</dl>
+</dd>
+
+
+<dt xml:lang="en">--nocompress</dt>
+
+<dd>
+<p>歸檔後不要壓縮，效果和 <q xml:lang="en"><samp>--compress none</samp></q> 一樣。</p>
+</dd>
+
+
+<dt xml:lang="en">-s, --sort</dt>
+
+<dd>
+<p>按記錄時間先後（及記錄本身順序）排序。排序很耗記憶體和 <abbr title="central processing unit" xml:lang="en">CPU</abbr> ，所以預設是不排序。請參見前面關於排序的注意事項。</p>
+</dd>
+
+
+<dt xml:lang="en">--nosort</dt>
+
+<dd>
+<p>不要排序（預設值）。</p>
+</dd>
+
+
+<dt xml:lang="en">-o, --override <var xml:lang="zh-tw">模式</var></dt>
+
+<dd>
+<p>如果有同名的舊檔，該怎麼辦。目前有下列模式：</p>
+
+
+<dl>
+<dt xml:lang="en">o, overwrite</dt>
+
+<dd>
+<p>蓋掉舊檔。舊檔的記錄會被刪掉，請多加小心。若妳的記錄檔是主記錄檔，有最完整的記錄，妳可以用 <samp xml:lang="en">overwrite</samp> 。</p>
+</dd>
+
+
+<dt xml:lang="en">a, append</dt>
+
+<dd>
+<p>和舊檔加在一起。這有可能會演變成大混亂，請多加小心。若妳想把兩份不同時間的記錄檔加在一起，妳可以用 <samp xml:lang="en">append</samp> 。</p>
+</dd>
+
+
+<dt xml:lang="en">i, ignore</dt>
+
+<dd>
+<p>略過所有該月的記錄。這有可能造成部份記錄流失，請多加小心。若妳只要補充沒有歸檔的月份，妳可以用 <samp xml:lang="en">ignore</samp> 。</p>
+</dd>
+
+
+<dt xml:lang="en">f, fail</dt>
+
+<dd>
+<p>結束程式，以免不小心破壞舊檔。若妳要用 <samp xml:lang="en">crontab</samp> 之類的程式，全自動化執行，最好這樣，以免破壞資料。因此，若標準輸入不是連到鍵盤上，預設是 <samp xml:lang="en">fail</samp> 。</p>
+</dd>
+
+
+<dt xml:lang="en">ask</dt>
+
+<dd>
+<p>問妳該怎麼辦。若妳是手動執行，這樣最方便。因此，若標準輸入是連到鍵盤上，預設是 <samp xml:lang="en">ask</samp> 。答案是從標準輸入讀的。因為標準輸入只有一個，若妳要從標準輸入讀記錄檔，不能跑 <samp xml:lang="en">ask</samp> 模式，會自動退回 <samp xml:lang="en">fail</samp> 模式。還有，如果從標準輸入讀不到東西，像 <samp xml:lang="en">crontab</samp> 裏標準輸入被關掉了，也會自動退回 <samp xml:lang="en">fail</samp> 模式。</p>
+</dd>
+</dl>
+</dd>
+
+
+<dt xml:lang="en">-k, --keep <var xml:lang="zh-tw">模式</var></dt>
+
+<dd>
+<p>原記錄檔要怎麼處理。目前有下列模式：</p>
+
+
+<dl>
+<dt xml:lang="en">a, all</dt>
+
+<dd>
+<p>完全保留原檔。</p>
+</dd>
+
+
+<dt xml:lang="en">r, restart</dt>
+
+<dd>
+<p>歸檔後，原記錄檔歸零。</p>
+</dd>
+
+
+<dt xml:lang="en">d, delete</dt>
+
+<dd>
+<p>歸檔後，刪除原記錄檔。</p>
+</dd>
+
+
+<dt xml:lang="en">t, this-month</dt>
+
+<dd>
+<p>將之前月份的記錄歸檔，保留這個月的記錄，留待下個月歸檔。這是給 <samp xml:lang="en">crontab</samp> 每月歸檔用的。因此，預設是 <samp xml:lang="en">this-month</samp> 。</p>
+</dd>
+</dl>
+
+</dd>
+
+
+<dt xml:lang="en">-d, --debug</dt>
+
+<dd>
+<p>顯示詳細的執行過程。</p>
+</dd>
+
+
+<dt xml:lang="en">-q, --quiet</dt>
+
+<dd>
+<p>沒事不要吵。 :p</p>
+</dd>
+
+
+<dt xml:lang="en">-h, --help</dt>
+
+<dd>
+<p>顯示程式說明。</p>
+</dd>
+
+
+<dt xml:lang="en">-v, --version</dt>
+
+<dd>
+<p>顯示程式版本。</p>
+</dd>
+</dl>
+
+
+<h2>版權聲明</h2>
+
+<p>版權所有 &copy; 2001-2007 依瑪貓。</p>
+
+<p>本程式是自由軟體，您可以遵照自由軟體基金會 <span xml:lang="en">(Free Software Foundation)</span> 出版的 <cite><acronym title="GNU&rsquo;s Not UNIX" xml:lang="en">GNU</acronym> 通用公共許可證</cite>條款 <span xml:lang="en">(<cite><acronym title="GNU&rsquo;s Not UNIX">GNU</acronym> General Public License</cite>)</span> 第三版來修改和重新發佈這一程式，或者自由選擇使用任何更新的版本。</p>
+
+<p>發佈這一程式的目的是希望它有用，但沒有任何擔保。甚至沒有適合特定目的而隱含的擔保。更詳細的情況請參閱 <cite><acronym title="GNU&rsquo;s Not UNIX" xml:lang="en">GNU</acronym> 通用公共許可證</cite>。</p>
+
+<p>您應該已經和程式一起收到一份 <cite><acronym title="GNU&rsquo;s Not UNIX" xml:lang="en">GNU</acronym> 通用公共許可證</cite>的副本。如果還沒有，參閱<samp>&lt;<a href="http://www.gnu.org/licenses/" hreflang="en">http://www.gnu.org/licenses/</a>&gt;</samp>。</p>
+
+
+<h2>版本紀錄</h2>
+
+<p>請閱讀 <samp xml:lang="en">NEWS</samp> 檔，查看程式的演變、新增的功能和修補的錯誤。</p>
+
+
+<h2>支援協助</h2>
+
+<p><samp xml:lang="en">arclog</samp> 網站架在 <a href="https://sourceforge.net/" hreflang="en" xml:lang="en">SourceForge</a> 、 <a href="http://www.cpan.org/" hreflang="en" xml:lang="en"><acronym title="Comprehensive Perl Archive Network">CPAN</acronym></a> 與 <a href="http://www.imacat.idv.tw/">旅舍依瑪</a>。索取最新資訊，請駕臨：</p>
+
+<ul>
+<li><p><a href="http://arclog.sourceforge.net/"><span xml:lang="en">SourceForge</span> 上的 <samp xml:lang="en">arclog</samp> 網站</a>。</p></li>
+<li><p><a href="http://sourceforge.net/projects/arclog/" hreflang="en"><samp xml:lang="en">arclog</samp> <span xml:lang="en">SourceForge</span> 專案頁</a>。</p></li>
+<li><p><a href="http://search.cpan.org/dist/arclog/" hreflang="en"><samp xml:lang="en">arclog</samp> <acronym title="Comprehensive Perl Archive Network" xml:lang="en">CPAN</acronym> 專案頁</a>。</p></li>
+<li><p><a href="http://www.imacat.idv.tw/tech/arclog.html">旅舍依瑪 <samp xml:lang="en">arclog</samp> 網頁</a>。</p></li>
+</ul>
+
+<p>在 <a href="https://sourceforge.net/" hreflang="en" xml:lang="en">SourceForge</a> 上有一個 <a href="mailto:arclog-users&#64;lists.sourceforge.net"><samp xml:lang="en">arclog</samp> 的郵件通訊</a> 。使用上的問題、建議或錯誤回報，請提到通訊上討論。它是 <a href="http://www.list.org/" hreflang="en" xml:lang="en">Mailman</a> 的郵件通訊。若要加入，請到 <a href="https://lists.sourceforge.net/lists/listinfo/arclog-users" hreflang="en"><samp xml:lang="en">arclog</samp> 郵件通訊的網頁</a> 。妳也可以寫信到 <a href="mailto:arclog-users-request&#64;lists.sourceforge.net"><acronym title="electronic mail" xml:lang="en">E-mail</acronym> 指令信箱</a>，標題填上 <samp xml:lang="en">help</samp> ，索取 <acronym title="electronic mail" xml:lang="en">E-mail</acronym> 指令說明。</p>
+
+</div>
+
+
+<hr />
+<div id="footer" class="footer" title="頁尾區">
+<address><a href="mailto:imacat&#64;mail.imacat.idv.tw">依瑪貓</a>，初稿 2001-06-08 ，上次更新日期 2008-11-15</address>
+
+<address>版權所有 &copy; 2010 依瑪貓，欲轉載引用請先閱讀<a href="fdl.txt">版權聲明</a>。</address>
+</div>
+
+</body>
+</html>
